@@ -5,9 +5,6 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
 import torch.optim as optim
 
-
-
-
 class FFCNN(nn.Module):
     def __init__(self):
         super(FFCNN, self).__init__()

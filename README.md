@@ -52,3 +52,13 @@ Utilize vectorized operations and parallel processing to speed up computations.
 
 
 # Results
+
+
+### Results using a Feed Forward Neural Network as function in BTB
+![house](FFNeural_Network_BTB/houseCNN_BTB.png)
+![lena](FFNeural_Network_BTB/lenaCNN_BTB.png)
+
+### Results using BM3D as function in BTB
+![house](BM3D_BTB/house1.png)
+![lena](BM3D_BTB/lena_bm3d_btb1.png)
+![lena2](BM3D_BTB/lena_bm3d_btb2.png)

@@ -25,20 +25,18 @@ This repository implements a denoising algorithm based on local neighborhood ave
 For each pixel $p_{i,j}$ in the image$I$, define a neighborhood $N_{i,j}$ (e.g., a 3x3 window) centered at $p_{i,j} $.
 
 ### 2. Weighted Averaging
-Compute the weighted average$\hat{p}_{i,j}$as:
+Compute the weighted average $\hat{p}_{i,j}$ as:
 
-$$\hat{p}_{i,j} = \frac{\sum_{(k,l) \in N_{i,j}} w_{k,l} \cdot p_{k,l}}{\sum_{(k,l) \in N_{i,j}} w_{k,l}}$$
+![Weighted Average Formula](https://latex.codecogs.com/svg.image?\inline&space;\bg{white}\hat{p}_{i,j}=\frac{\sum_{(k,l)\in&space;N_{i,j}}w_{k,l}\cdot&space;p_{k,l}}{\sum_{(k,l)\in&space;N_{i,j}}w_{k,l}})
+
+
 
 where $w_{k,l}$ are weights assigned based on proximity and similarity to $p_{i,j}$.
 
 ### 3. Thresholding
 Apply a threshold $T$ to suppress minor variations due to noise:
 
-$$p'_{i,j} = 
-\begin{cases} 
-\hat{p}_{i,j}, & \text{if } |p_{i,j} - \hat{p}_{i,j}| > T \\
-p_{i,j}, & \text{otherwise}
-\end{cases}$$
+![Th](https://quicklatex.com/cache3/8d/ql_32a41aca089ec0b89665472abd9c068d_l3.png)
 
 ### 4. Iterative Refinement
 Repeat steps 1-3 for a predefined number of iterations or until convergence.

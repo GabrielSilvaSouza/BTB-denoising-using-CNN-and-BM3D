@@ -20,9 +20,9 @@ class DenoisingPipeline:
                         1. FFCNN \n 
                         2. BM3D \n 
                         Enter the number of the model: """)
-        img_path = input("Enter the path of the noisy image: ")
-        image = cv2.imread(img_path, cv2.IMREAD_COLOR)
-        
+        img_path = input("\n Enter the path of the noisy image: ")
+        image = cv2.cvtColor(cv2.imread(img_path, cv2.IMREAD_COLOR), cv2.COLOR_BGR2RGB)
+
         self.noisy_img = image.astype(np.float32) / 255.0
         self.noisy_img_tensor = torch.from_numpy(self.noisy_img).permute(2, 0, 1).unsqueeze(0).float()
     
@@ -34,7 +34,7 @@ class DenoisingPipeline:
             self.denoiser = denoiser_bm3d
 
     def denoise(self):
-        mu_sequence = np.linspace(0.1, 1, 10)
+        mu_sequence = np.linspace(0.1, 0.2, 10)
         T = 10
         delta = 1e-4
 

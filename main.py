@@ -34,8 +34,8 @@ class DenoisingPipeline:
             self.denoiser = denoiser_bm3d
 
     def denoise(self):
-        mu_sequence = np.linspace(0.1, 0.2, 10)
-        T = 10
+        mu_sequence = np.linspace(0.1, 0.2, 8)
+        T = 8
         delta = 1e-4
 
         denoised_image = fast_iterative_denoising_btb(self.noisy_img_tensor, self.denoiser, mu_sequence, T, delta)

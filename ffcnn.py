@@ -10,7 +10,7 @@ class FFCNN(nn.Module):
         super(FFCNN, self).__init__()
         
         self.encoder = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=3, padding=1),  # Assuming input images are RGB
+            nn.Conv2d(3, 64, kernel_size=3, padding=1), 
             nn.ReLU(),
             nn.Conv2d(64, 32, kernel_size=3, padding=1),
             nn.ReLU(),
@@ -24,7 +24,7 @@ class FFCNN(nn.Module):
             nn.ConvTranspose2d(32, 64, kernel_size=3, padding=1),
             nn.ReLU(),
             nn.ConvTranspose2d(64, 3, kernel_size=3, padding=1),
-            nn.Sigmoid()  # Use sigmoid to ensure output is between 0 and 1
+            nn.Sigmoid()  
         )
         
     def forward(self, x):
